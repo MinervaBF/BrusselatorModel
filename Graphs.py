@@ -36,3 +36,40 @@ def sigma_m(b,q):
 
 def f(b, q):
     return np.maximum(np.real(sigma_p(b,q)), np.real(sigma_m(b,q)))
+
+q = np.linspace(0, 1, 500)
+
+fig, ax = plt.subplots()
+
+y1 = np.real(sigma_p(0.6*b_c, q))
+y2 = np.real(sigma_p(b_c, q))
+y3 = np.real(sigma_p(1.4*b_c, q))
+y4 = np.real(sigma_p(1.8*b_c, q))
+
+mask1=(y1>=-10)
+mask2=(y2>=-10)
+mask3=(y3>=-10)
+mask4=(y4>=-10)
+
+ax.plot(q[mask1], y1[mask1], label=r'$b=0.6b_c$')
+ax.plot(q[mask2], y2[mask2], label=r'$b=b_c$')
+ax.plot(q[mask3], y3[mask3], label=r'$b=1.4b_c$')
+ax.plot(q[mask4], y4[mask4], label=r'$b=1.8b_c$')
+
+plt.axvline(x=q_c, color='black', linestyle='--', label=r'$q = q_c$')
+
+plt.xlabel(r'$q$', loc='right')
+plt.ylabel(r'$\Re(\sigma_q^+)$',rotation=0, loc='top', labelpad=-20)
+
+#Make axes cross at (0,0)
+ax.spines['bottom'].set_position('zero')
+ax.spines['left'].set_position('zero')
+
+#Hide top and right spines
+ax.spines['right'].set_color('none')
+ax.spines['top'].set_color('none')
+
+ax.legend()
+
+plt.show()
+
