@@ -1,6 +1,6 @@
 Simulation corresponding to the parameters:
 
-a = 1.5\\
+a = 1.5\n
 b = 3.23\\
 dX = 10\\
 dY = 15\\
