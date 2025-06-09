@@ -1,7 +1,7 @@
 Simulation corresponding to the parameters:
 
 a = 2
-b = 3.23
+b = 2
 dX = 1
 dY = 10
 
