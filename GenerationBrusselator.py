@@ -4,17 +4,20 @@ import numpy as np
 # Parameters
 # -------------------------------
 a = 1.5
-b = 2.3
-dX = 3
-dY = 25
+b = 6.5
+dX = 10
+dY = 15
 
 L = 50          # Size of the domain
 N = 50         # Number of points in X
 dx = L / N
 dy = dx
 dt = 0.01       # Time step
-T = 5          # Total Time
+T = 40          # Total Time
 steps = round(T / dt)
+
+if((max(dX,dY)*dt/(dx*dx))>0.25):
+  print('Numerical stability does not hold.') # This assures that the numerical method is stable.
 
 # -------------------------------
 # Initial conditions
@@ -22,13 +25,13 @@ steps = round(T / dt)
 x = np.zeros((N+2, N+2))
 y = np.zeros((N+2, N+2))
 
-# Random initial condition
-#x[1:N+1, 1:N+1] = np.random.rand(N, N)
-#y[1:N+1, 1:N+1] = np.random.rand(N, N)
+# Constant perturbation from the equilibrium initial condition
+x[1:N+1, 1:N+1] = a*np.ones((N,N))+0.01
+y[1:N+1, 1:N+1] = (b/a)*np.ones((N,N))+0.01
 
-# Small perturbation from the equilibrium initial condition
-x[1:N+1, 1:N+1] = a*np.ones((N,N))+0.01*np.random.rand(N,N)
-y[1:N+1, 1:N+1] = (b/a)*np.ones((N,N))+0.01*np.random.rand(N,N)
+# Small random perturbation from the equilibrium initial condition
+#x[1:N+1, 1:N+1] = a*np.ones((N,N))+0.01*np.random.rand(N,N)
+#y[1:N+1, 1:N+1] = (b/a)*np.ones((N,N))+0.01*np.random.rand(N,N)
 
 # -------------------------------
 # Function to impose periodic conditions
