@@ -8,4 +8,6 @@ The file AnimationBrusselator2D.py contains the code to generate animations from
 
 The file Graphs.py allowed us to represent $Re(\sigma_q^+)$ vs $q$. This graphs allowed us to predict the behaviour of the system.
 
+We will analyze the evolution of $x$, but it is equivalent to study $y$.
+
 Authors: Minerva Bermúdez Ferrer and Alejandro Oliver Huete.
