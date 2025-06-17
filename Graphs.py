@@ -34,12 +34,6 @@ def Delta(b,q):
 def sigma_p(b,q):
     return 0.5*(tr(b,q)+Delta(b,q))
 
-def sigma_m(b,q):
-    return 0.5*(tr(b,q)-Delta(b,q))
-
-def f(b, q):
-    return np.maximum(np.real(sigma_p(b,q)),np.real(sigma_m(b,q)))
-
 
 q = np.linspace(0, 3, 500)
 
