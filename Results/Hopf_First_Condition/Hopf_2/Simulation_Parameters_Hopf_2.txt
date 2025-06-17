@@ -1,0 +1,17 @@
+Simulation corresponding to the parameters:
+
+a = 1.5
+dX = 10
+dY = 15
+
+L = 50          # Size of the domain
+N = 50         # Number of points in X
+dx = L / N
+dy = dx
+dt = 0.01       # Time step
+T = 40          # Total Time
+
+We take the values of the bifurcation parameter:
+b = 3 = 0.9b_c < b_c
+b = b_c = 3.25
+b = 6.5 = 2b_c > b_c
