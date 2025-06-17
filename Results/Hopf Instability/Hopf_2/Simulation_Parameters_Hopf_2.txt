@@ -1,0 +1,17 @@
+The name of the files has the format brusseltor_{instability}_{b_c}_{a}_{d_X}_{d_Y}_{b}
+
+Where b_c is the value of the b critical, and a, d_X, d_Y, b the value of the parameters taken in the simulation
+
+Simulation corresponding to the parameters:
+
+L = 50          # Size of the domain
+N = 50         # Number of points in X
+dx = L / N
+dy = dx
+dt = 0.01       # Time step
+T = 40          # Total Time
+
+We take the values of the bifurcation parameter:
+b = 3 = 0.9b_c < b_c
+b = b_c = 3.25
+b = 6.5 = 2b_c > b_c
