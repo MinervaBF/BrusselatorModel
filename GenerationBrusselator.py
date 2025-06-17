@@ -35,8 +35,8 @@ save_to_file=False
 filename=f"brusselator_{instability}_{b_c:.2f}_{a}_{d_X}_{d_Y}_{b/b_c:.2f}bc"
 
 #Initialize concentrations: stead_Y state plus random noise
-x=np.clip(a+0.5*np.random.randn(N, N),0,None)
-y=np.clip(b/a+0.5*np.random.randn(N, N),0,None)
+x=np.clip(a+0.1*np.random.randn(N, N),0,None)
+y=np.clip(b/a+0.1*np.random.randn(N, N),0,None)
 
 #Figure and axis for the animation
 fig, ax=plt.subplots(figsize=(5, 5))
